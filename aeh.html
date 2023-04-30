@@ -6,12 +6,12 @@
 <body>
 	<pre>
 		<code>
-			-- nse_vuln_scan.nse
+			
 
--- define the script categories
+
 categories = {"vuln"}
 
--- define the script arguments
+
 portrule = function(host, port)
   if port.number == 80 then
     return true
@@ -19,7 +19,7 @@ portrule = function(host, port)
   return false
 end
 
--- define the script main function
+
 action = function(host, port)
   local vulns = {}
 
@@ -33,7 +33,7 @@ action = function(host, port)
     table.insert(vulns, "Vulnerability 2 detected")
   end
 
-  -- print the results
+  
   if #vulns > 0 then
     local output = table.concat(vulns, ", ")
     return "\n" .. output .. "\n"
@@ -42,7 +42,7 @@ action = function(host, port)
   return nil
 end
 
--- define the vulnerability check functions
+
 check_vuln1 = function(host, port)
   -- perform check for vulnerability 1
   return true
